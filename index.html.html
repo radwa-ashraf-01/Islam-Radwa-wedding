@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Islam & Radwa | Wedding Invitation</title>
+  <meta name="description" content="Islam & Radwa Joyfully Invite You | Monday, December 14, 2026" />
+  <meta property="og:title" content="Islam & Radwa | Wedding Invitation" />
+  <meta property="og:description" content="Join us as we celebrate our wedding | Monday, December 14, 2026" />
+  <meta property="og:image" content="image_ed21a4.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --royal-red: #5c0c14;
+      --royal-dark: #360509;
+      --royal-deeper: #220205;
+      --gold: #d4af37;
+      --gold-light: #f3e5ab;
+      --cream: #fdfbf7;
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      background-color: var(--royal-deeper);
+      color: var(--royal-dark);
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    .font-title { font-family: 'Viaoda Libre', serif; }
+    .font-royal { font-family: 'Cormorant Garamond', serif; }
+    .font-arabic { font-family: 'Amiri', serif; }
+
+    .royal-gradient {
+      background: radial-gradient(circle at top, #75121c 0%, #4a080e 55%, #2b0307 100%);
+    }
+
+    .gold-border {
+      border: 1px solid rgba(212, 175, 55, 0.45);
+    }
+
+    @keyframes ambient-fall {
+      0% { transform: translateY(-30px) translateX(0) rotate(0deg); opacity: 0; }
+      15% { opacity: 0.85; }
+      85% { opacity: 0.85; }
+      100% { transform: translateY(100vh) translateX(25px) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes seal-pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.08); }
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      45%, 100% { left: 200%; }
+    }
+
+    #envelope-overlay {
+      transition: opacity 0.9s ease, transform 0.9s ease, visibility 0.9s;
+    }
+    #envelope-overlay.opened {
+      opacity: 0;
+      transform: scale(1.08);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#5c0c14] selection:text-[#f3e5ab]">
+
+  <!-- Background Music (Put music.mp3 in the same folder) -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Music Toggle Button -->
+  <button id="music-btn" onclick="toggleMusic()" class="fixed bottom-5 right-5 z-40 hidden w-12 h-12 rounded-full bg-[#5c0c14] text-[#f3e5ab] shadow-2xl border-2 border-[#d4af37] flex items-center justify-center hover:scale-105 transition">
+    <span id="music-icon">🔊</span>
+  </button>
+
+  <!-- =========================================================
+       1. ROYAL V2 RED ENVELOPE OVERLAY
+       ========================================================= -->
+  <div id="envelope-overlay" class="royal-gradient fixed inset-0 z-50 flex items-center justify-center overflow-hidden px-4">
+    <div id="falling-particles" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+
+    <div class="relative w-full max-w-[350px] sm:max-w-[440px] z-10">
+      <!-- Golden Wax Seal -->
+      <div style="top: 0; left: 50%; background: radial-gradient(circle at 30% 30%, #f3e5ab, #d4af37, #8a640f); box-shadow: 0 6px 25px rgba(0,0,0,0.6), inset 0 2px 5px rgba(255,255,255,0.6); animation: seal-pulse 2.2s ease-in-out infinite;" class="absolute w-16 h-16 rounded-full flex items-center justify-center z-30 border-2 border-[#fffaf3]/60">
+        <svg class="w-8 h-8 text-[#4a080e]" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+
+      <!-- Envelope Card Body -->
+      <div class="bg-[#fdfbf7] rounded-2xl p-2 shadow-2xl border-2 border-[#d4af37]/60">
+        <div class="border border-[#d4af37]/40 rounded-xl px-6 pt-14 pb-10 text-center relative overflow-hidden">
+          
+          <!-- Golden Corner Ornaments -->
+          <div class="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-[#d4af37]"></div>
+          <div class="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-[#d4af37]"></div>
+          <div class="absolute bottom-2 left-2 w-8 h-8 border-b-2 border-l-2 border-[#d4af37]"></div>
+          <div class="absolute bottom-2 right-2 w-8 h-8 border-b-2 border-r-2 border-[#d4af37]"></div>
+
+          <p class="text-[11px] uppercase tracking-[0.25em] text-[#5c0c14]/70 mb-2 font-semibold">Together With Their Families</p>
+          
+          <h1 class="font-title text-4xl sm:text-5xl text-[#5c0c14] my-3 flex flex-col items-center gap-1">
+            <span>Islam</span>
+            <span class="font-royal text-2xl text-[#d4af37] italic">&amp;</span>
+            <span>Radwa</span>
+          </h1>
+
+          <div class="flex items-center justify-center gap-3 my-3">
+            <div class="w-14 h-px bg-gradient-to-r from-transparent to-[#d4af37]"></div>
+            <span class="text-[#d4af37] text-lg">❖</span>
+            <div class="w-14 h-px bg-gradient-to-l from-transparent to-[#d4af37]"></div>
+          </div>
+
+          <p class="font-royal text-xl text-[#5c0c14] font-bold mb-1">Monday, December 14, 2026</p>
+          <p class="text-sm text-[#5c0c14]/75 italic mb-8">I&amp;R Joyfully Invite You</p>
+
+          <button onclick="openInvitation()" class="relative px-10 py-3 rounded-full royal-gradient text-[#f3e5ab] font-semibold text-base shadow-xl border border-[#d4af37] hover:scale-105 transition flex items-center justify-center mx-auto overflow-hidden gap-2">
+            <span>Open Invitation</span>
+            <div style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); animation: shine 3s ease-in-out infinite;" class="absolute top-0 h-full w-10 pointer-events-none"></div>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       2. MAIN INVITATION CONTENT (ROYAL V2 RED)
+       ========================================================= -->
+  <div class="min-h-screen py-0 md:py-8 flex justify-center">
+    <main class="w-full max-w-[520px] bg-[#fdfbf7] shadow-2xl md:rounded-3xl overflow-hidden border-2 border-[#d4af37]/50 relative">
+
+      <!-- 1. Royal Hero Section -->
+      <section class="royal-gradient text-[#fdfbf7] text-center px-6 pt-12 pb-14 relative overflow-hidden border-b-4 border-[#d4af37]">
+        <div class="border border-[#d4af37]/35 rounded-2xl p-5 relative">
+          <p class="text-xs tracking-[0.25em] text-[#f3e5ab]/80 uppercase mb-1">Save The Date</p>
+          <p class="font-royal italic text-lg text-[#f3e5ab] mb-4">Happy Wedding</p>
+
+          <h1 class="font-title text-4xl sm:text-5xl text-[#f3e5ab] leading-tight mb-6">
+            Islam <span class="font-royal text-3xl text-[#d4af37] italic mx-1">&amp;</span> Radwa
+          </h1>
+
+          <!-- Hero Photo -->
+          <div class="relative mx-auto max-w-[340px] rounded-t-full rounded-b-2xl overflow-hidden border-4 border-[#d4af37] shadow-2xl mb-6 bg-[#360509]">
+            <img src="image_ed21a4.jpg" alt="Islam & Radwa" class="w-full h-[420px] object-cover object-top" />
+          </div>
+
+          <div class="inline-block px-6 py-2 rounded-full bg-[#360509]/80 border border-[#d4af37]/60 text-[#f3e5ab] font-royal text-xl tracking-wide">
+            December 14, 2026
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Groom & Bride Section -->
+      <section class="reveal px-6 py-12 text-center">
+        <p class="text-xs uppercase tracking-[0.25em] text-[#5c0c14]/60 mb-1">The Couple</p>
+        <h2 class="font-title text-3xl text-[#5c0c14] mb-8">Islam &amp; Radwa</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-md mx-auto">
+          <!-- Groom Card -->
+          <div class="bg-white p-5 rounded-2xl shadow-md gold-border flex flex-col items-center">
+            <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-[#d4af37] shadow-md mb-4">
+              <img src="image_ed2186.jpg" alt="The Groom Islam" class="w-full h-full object-cover object-top" />
+            </div>
+            <span class="text-[11px] uppercase tracking-widest text-[#5c0c14]/60 mb-1">The Groom</span>
+            <h3 class="font-title text-2xl text-[#5c0c14]">Islam</h3>
+          </div>
+
+          <!-- Bride Card -->
+          <div class="bg-white p-5 rounded-2xl shadow-md gold-border flex flex-col items-center">
+            <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-[#d4af37] shadow-md mb-4">
+              <img src="image_ed216c.jpg" alt="The Bride Radwa" class="w-full h-full object-cover object-top" />
+            </div>
+            <span class="text-[11px] uppercase tracking-widest text-[#5c0c14]/60 mb-1">The Bride</span>
+            <h3 class="font-title text-2xl text-[#5c0c14]">Radwa</h3>
+          </div>
+        </div>
+
+        <!-- Announcement Text -->
+        <div class="mt-10 p-6 rounded-2xl bg-[#5c0c14]/[0.03] gold-border max-w-md mx-auto">
+          <p class="text-base leading-relaxed text-[#5c0c14]/90">
+            Together with their families,
+            <strong class="font-title text-3xl block my-3 text-[#5c0c14] font-normal">Islam &amp; Radwa</strong>
+            joyfully invite you to share in their happiness and celebrate their wedding day.
+          </p>
+        </div>
+      </section>
+
+      <!-- Ornamental Divider -->
+      <div class="flex items-center justify-center gap-3 px-10">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent to-[#d4af37]"></div>
+        <span class="text-[#d4af37] text-xl">⚜️</span>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent to-[#d4af37]"></div>
+      </div>
+
+      <!-- 3. Calendar & Countdown Section (December 14, 2026) -->
+      <section class="reveal px-6 py-12 text-center">
+        <p class="text-xs uppercase tracking-[0.25em] text-[#5c0c14]/60 mb-1">Save The Date</p>
+        <h2 class="font-title text-3xl text-[#5c0c14] mb-6">December 2026</h2>
+
+        <!-- December 2026 Calendar (Dec 1, 2026 is Tuesday; Dec 14 is Monday) -->
+        <div class="max-w-[330px] mx-auto bg-white p-5 rounded-2xl shadow-sm gold-border mb-8">
+          <div class="grid grid-cols-7 gap-1 text-xs font-semibold text-[#5c0c14]/60 mb-2">
+            <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+          </div>
+          <div class="grid grid-cols-7 gap-1 text-sm text-[#5c0c14]">
+            <div></div><div></div>
+            <div class="py-1.5">1</div><div class="py-1.5">2</div><div class="py-1.5">3</div><div class="py-1.5">4</div><div class="py-1.5">5</div>
+            <div class="py-1.5">6</div><div class="py-1.5">7</div><div class="py-1.5">8</div><div class="py-1.5">9</div><div class="py-1.5">10</div><div class="py-1.5">11</div><div class="py-1.5">12</div>
+            <div class="py-1.5">13</div>
+            <!-- Highlighted Wedding Day: Dec 14 -->
+            <div class="relative py-1.5 font-bold text-[#f3e5ab] bg-[#5c0c14] rounded-full flex items-center justify-center shadow border border-[#d4af37]">
+              14
+              <span class="absolute -top-1.5 -right-1 text-[10px]">❤️</span>
+            </div>
+            <div class="py-1.5">15</div><div class="py-1.5">16</div><div class="py-1.5">17</div><div class="py-1.5">18</div><div class="py-1.5">19</div>
+            <div class="py-1.5">20</div><div class="py-1.5">21</div><div class="py-1.5">22</div><div class="py-1.5">23</div><div class="py-1.5">24</div><div class="py-1.5">25</div><div class="py-1.5">26</div>
+            <div class="py-1.5">27</div><div class="py-1.5">28</div><div class="py-1.5">29</div><div class="py-1.5">30</div><div class="py-1.5">31</div>
+          </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="grid grid-cols-4 gap-2.5 max-w-[360px] mx-auto mb-8">
+          <div class="royal-gradient text-[#f3e5ab] py-3 px-2 rounded-xl border border-[#d4af37] shadow-lg">
+            <span id="cd-days" class="font-royal text-3xl font-bold block">00</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-80">Days</span>
+          </div>
+          <div class="royal-gradient text-[#f3e5ab] py-3 px-2 rounded-xl border border-[#d4af37] shadow-lg">
+            <span id="cd-hours" class="font-royal text-3xl font-bold block">00</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-80">Hours</span>
+          </div>
+          <div class="royal-gradient text-[#f3e5ab] py-3 px-2 rounded-xl border border-[#d4af37] shadow-lg">
+            <span id="cd-mins" class="font-royal text-3xl font-bold block">00</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-80">Min</span>
+          </div>
+          <div class="royal-gradient text-[#f3e5ab] py-3 px-2 rounded-xl border border-[#d4af37] shadow-lg">
+            <span id="cd-secs" class="font-royal text-3xl font-bold block">00</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-80">Sec</span>
+          </div>
+        </div>
+
+        <!-- Add to Google Calendar -->
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Islam+%26+Radwa&dates=20261214T160000Z/20261214T210000Z&details=Wedding+celebration+of+Islam+%26+Radwa.+Location:+https://maps.app.goo.gl/qq6V9NevhkTmANtf7&location=https://maps.app.goo.gl/qq6V9NevhkTmANtf7" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#5c0c14] text-[#f3e5ab] text-xs uppercase tracking-wider font-semibold border border-[#d4af37] shadow hover:bg-[#360509] transition">
+          <span>📅</span>
+          <span>Add to Calendar</span>
+        </a>
+      </section>
+
+      <!-- 4. Wedding Reception & Location Section -->
+      <section class="reveal royal-gradient text-[#fdfbf7] px-6 py-12 text-center border-y-4 border-[#d4af37]">
+        <p class="text-xs uppercase tracking-[0.25em] text-[#f3e5ab]/70 mb-1">The Celebration</p>
+        <h2 class="font-title text-3xl text-[#f3e5ab] mb-2">Wedding Reception</h2>
+        <p class="text-sm text-[#f3e5ab]/85 mb-6">Monday, December 14, 2026</p>
+
+        <!-- Welcome (6:00 PM) & Reception (7:00 PM) -->
+        <div class="flex justify-center items-center gap-8 mb-8 bg-[#360509]/60 py-4 px-6 rounded-2xl border border-[#d4af37]/40 max-w-xs mx-auto">
+          <div>
+            <span class="block text-[11px] uppercase tracking-wider text-[#f3e5ab]/70 mb-1">Welcome</span>
+            <span class="font-royal text-2xl font-bold text-[#f3e5ab]">6:00 PM</span>
+          </div>
+          <div class="h-10 w-px bg-[#d4af37]/40"></div>
+          <div>
+            <span class="block text-[11px] uppercase tracking-wider text-[#f3e5ab]/70 mb-1">Reception</span>
+            <span class="font-royal text-2xl font-bold text-[#f3e5ab]">7:00 PM</span>
+          </div>
+        </div>
+
+        <!-- Venue & Google Maps Button -->
+        <div class="bg-[#fdfbf7] text-[#5c0c14] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl">
+          <div class="w-12 h-12 rounded-full bg-[#5c0c14]/10 text-[#5c0c14] flex items-center justify-center mx-auto mb-3 text-2xl">
+            📍
+          </div>
+          <h3 class="font-title text-2xl mb-2">Wedding Venue</h3>
+          <p class="text-xs text-[#5c0c14]/75 mb-5">Tap the button below for exact Google Maps directions to the hall</p>
+
+          <a href="https://maps.app.goo.gl/qq6V9NevhkTmANtf7?g_st=iw" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl royal-gradient text-[#f3e5ab] text-sm font-semibold border border-[#d4af37] shadow-lg hover:scale-[1.02] transition">
+            <span>🗺️</span>
+            <span>Get Directions on Google Maps</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 5. Wedding Photo Album -->
+      <section class="reveal px-6 py-12 text-center">
+        <p class="text-xs uppercase tracking-[0.25em] text-[#5c0c14]/60 mb-1">Our Memories</p>
+        <h2 class="font-title text-3xl text-[#5c0c14] mb-8">Wedding Album</h2>
+
+        <div class="grid grid-cols-2 gap-3.5">
+          <div class="col-span-2 rounded-2xl overflow-hidden shadow-lg border-2 border-[#d4af37]/60">
+            <img src="image_ed2167.jpg" alt="Memory 1" onclick="openLightbox(this.src)" class="w-full h-80 object-cover object-top cursor-pointer hover:scale-105 transition duration-500" />
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-[#d4af37]/60">
+            <img src="image_ed214d.jpg" alt="Memory 2" onclick="openLightbox(this.src)" class="w-full h-64 object-cover object-top cursor-pointer hover:scale-105 transition duration-500" />
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-[#d4af37]/60">
+            <img src="image_ed2148.jpg" alt="Memory 3" onclick="openLightbox(this.src)" class="w-full h-64 object-cover object-top cursor-pointer hover:scale-105 transition duration-500" />
+          </div>
+          <div class="col-span-2 rounded-2xl overflow-hidden shadow-lg border-2 border-[#d4af37]/60">
+            <img src="image_ed212d.jpg" alt="Memory 4" onclick="openLightbox(this.src)" class="w-full h-80 object-cover object-top cursor-pointer hover:scale-105 transition duration-500" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Ornamental Divider -->
+      <div class="flex items-center justify-center gap-3 px-10">
+        <div class="flex-1 h-px bg-gradient-to-r from-transparent to-[#d4af37]"></div>
+        <span class="text-[#d4af37] text-xl">❖</span>
+        <div class="flex-1 h-px bg-gradient-to-l from-transparent to-[#d4af37]"></div>
+      </div>
+
+      <!-- 6. RSVP & Guestbook Section -->
+      <section class="reveal px-6 py-12 text-center">
+        <p class="text-xs uppercase tracking-[0.25em] text-[#5c0c14]/60 mb-1">Celebrate With Us</p>
+        <h2 class="font-title text-3xl text-[#5c0c14] mb-3">RSVP &amp; Guestbook</h2>
+        <p class="text-sm text-[#5c0c14]/75 mb-6 max-w-xs mx-auto">
+          Your presence would be an honor. Kindly confirm your attendance and leave us your warm wishes.
+        </p>
+
+        <!-- RSVP Popup Trigger Button -->
+        <button onclick="toggleRsvpModal(true)" class="px-8 py-3.5 rounded-full royal-gradient text-[#f3e5ab] font-semibold text-sm shadow-xl border border-[#d4af37] hover:scale-105 transition mb-10">
+          ✉️ Confirm Attendance (RSVP)
+        </button>
+
+        <!-- Guestbook Box -->
+        <div class="bg-white p-6 rounded-2xl gold-border shadow-md text-left">
+          <h3 class="font-title text-2xl text-[#5c0c14] text-center mb-4">Guestbook Wishes 🤍</h3>
+          <form onsubmit="submitWish(event)" class="space-y-3 mb-6">
+            <input type="text" id="wish-name" required placeholder="Enter your name*" class="w-full px-4 py-2.5 rounded-xl bg-[#fdfbf7] border border-[#d4af37]/50 text-sm focus:outline-none focus:border-[#5c0c14]" />
+            <textarea id="wish-msg" required rows="3" placeholder="Write your wishes for Islam & Radwa...*" class="w-full px-4 py-2.5 rounded-xl bg-[#fdfbf7] border border-[#d4af37]/50 text-sm focus:outline-none focus:border-[#5c0c14]"></textarea>
+            <button type="submit" id="wish-submit-btn" class="w-full py-3 rounded-xl royal-gradient text-[#f3e5ab] text-sm font-semibold border border-[#d4af37] hover:opacity-95 transition">
+              Send Wish 🤍
+            </button>
+          </form>
+
+          <!-- Live Wishes List -->
+          <div id="wishes-container" class="space-y-3 max-h-72 overflow-y-auto pr-1">
+            <!-- Wishes will be loaded here automatically -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Thank You Note & Quran Verse -->
+      <section class="reveal royal-gradient text-[#fdfbf7] px-6 py-12 text-center border-t-4 border-[#d4af37]">
+        <h3 class="font-title text-3xl text-[#f3e5ab] mb-4">Islam &amp; Radwa</h3>
+        
+        <div class="font-arabic text-xl leading-loose bg-[#360509]/70 p-5 rounded-2xl border border-[#d4af37]/50 mb-6 text-[#f3e5ab]" dir="rtl">
+          بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br/>
+          ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾
+        </div>
+
+        <p class="text-sm leading-relaxed text-[#fdfbf7]/90 italic max-w-md mx-auto">
+          With hearts full of love and gratitude, we invite you to join us as we begin our forever.<br/>
+          Some destinies are written by Allah in the most beautiful ways, and today, we celebrate the beginning of ours. May our union be blessed with love, mercy, and a lifetime of happiness.<br/><br/>
+          We would be honored to have you witness and celebrate our special day. 🤍
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- =========================================================
+       RSVP MODAL
+       ========================================================= -->
+  <div id="rsvp-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-[#fdfbf7] text-[#5c0c14] w-full max-w-md rounded-2xl p-6 border-2 border-[#d4af37] shadow-2xl relative">
+      <button onclick="toggleRsvpModal(false)" class="absolute top-4 right-4 text-gray-400 hover:text-[#5c0c14] text-2xl font-bold">&times;</button>
+      <h3 class="font-title text-2xl text-center mb-1">Confirm Attendance</h3>
+      <p class="text-xs text-center text-[#5c0c14]/70 mb-5">Kindly let us know if you can make it</p>
+
+      <form onsubmit="submitRsvp(event)" class="space-y-4 text-left">
+        <div>
+          <label class="block text-xs font-semibold mb-1">Your Name*</label>
+          <input type="text" id="rsvp-name" required placeholder="Enter your full name" class="w-full px-4 py-2.5 rounded-xl bg-white border border-[#d4af37]/60 text-sm focus:outline-none" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold mb-1">Will you attend?</label>
+          <select id="rsvp-attend" class="w-full px-4 py-2.5 rounded-xl bg-white border border-[#d4af37]/60 text-sm focus:outline-none">
+            <option value="Attending">Yes, I'll be there! 🎉</option>
+            <option value="Not Attending">Sorry, I can't make it 🤍</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold mb-1">Number of Guests</label>
+          <input type="number" id="rsvp-count" min="1" max="10" value="1" class="w-full px-4 py-2.5 rounded-xl bg-white border border-[#d4af37]/60 text-sm focus:outline-none" />
+        </div>
+        <button type="submit" id="rsvp-submit-btn" class="w-full py-3 rounded-xl royal-gradient text-[#f3e5ab] font-semibold text-sm border border-[#d4af37]">
+          Submit RSVP
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" onclick="this.classList.add('hidden')" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4 cursor-pointer">
+    <img id="lightbox-img" src="" class="max-h-[90vh] max-w-full rounded-xl border-2 border-[#d4af37]" />
+  </div>
+
+  <!-- =========================================================
+       SCRIPTS (COUNTDOWN, ANIMATIONS & LIVE GUESTBOOK)
+       ========================================================= -->
+  <script>
+    // Optional: Paste a Firebase Realtime Database URL here (e.g. "https://your-project-default-rtdb.firebaseio.com")
+    // to sync wishes across all guests' phones in real time!
+    const CLOUD_DB_URL = ""; 
+
+    // 1. Falling Hearts in Envelope Screen
+    const particlesContainer = document.getElementById('falling-particles');
+    const colors = ['#d4af37', '#f3e5ab', '#a8323b', '#ffffff'];
+    for (let i = 0; i < 15; i++) {
+      const p = document.createElement('div');
+      const size = Math.random() * 10 + 10;
+      const left = Math.random() * 95;
+      const duration = Math.random() * 8 + 16;
+      const delay = Math.random() * -20;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      p.style.cssText = `position:absolute; left:${left}%; top:-30px; color:${color}; font-size:${size}px; animation: ambient-fall ${duration}s ease-in-out ${delay}s infinite;`;
+      p.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
+      particlesContainer.appendChild(p);
+    }
+
+    // 2. Open Envelope & Play Audio
+    const music = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-btn');
+    const musicIcon = document.getElementById('music-icon');
+
+    function openInvitation() {
+      document.getElementById('envelope-overlay').classList.add('opened');
+      musicBtn.classList.remove('hidden');
+      music.play().catch(() => {});
+    }
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        musicIcon.innerText = '🔊';
+      } else {
+        music.pause();
+        musicIcon.innerText = '🔇';
+      }
+    }
+
+    // 3. Countdown Timer (Monday, December 14, 2026 at 6:00 PM)
+    const targetTime = new Date("2026-12-14T18:00:00").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetTime - now;
+      if (diff <= 0) return;
+      document.getElementById('cd-days').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+      document.getElementById('cd-hours').innerText = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+      document.getElementById('cd-mins').innerText = String(Math.floor((diff / 1000 / 60) % 60)).padStart(2, '0');
+      document.getElementById('cd-secs').innerText = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // 4. Scroll Reveal Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 5. Lightbox
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.remove('hidden');
+    }
+
+    // 6. RSVP Modal & Guestbook Storage (LocalStorage + Optional Cloud Sync)
+    const STORAGE_KEY = 'islam_radwa_wishes_v1';
+    const defaultWishes = [
+      { name: "Family & Friends", msg: "Wishing Islam & Radwa a lifetime of love, joy, and endless blessings! 🤍", time: "Pinned" }
+    ];
+
+    function renderWishes(wishesArray) {
+      const container = document.getElementById('wishes-container');
+      container.innerHTML = '';
+      wishesArray.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'p-3.5 rounded-xl bg-[#fdfbf7] border border-[#d4af37]/30 shadow-sm';
+        div.innerHTML = `
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-bold text-xs text-[#5c0c14]">${escapeHtml(item.name)}</span>
+            <span class="text-[10px] text-[#5c0c14]/50">${escapeHtml(item.time || 'Just now')}</span>
+          </div>
+          <p class="text-xs text-[#5c0c14]/85 leading-relaxed">${escapeHtml(item.msg)}</p>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    async function loadWishes() {
+      if (CLOUD_DB_URL) {
+        try {
+          const res = await fetch(`${CLOUD_DB_URL}/wishes.json`);
+          const data = await res.json();
+          if (data) {
+            const list = Object.values(data).reverse();
+            renderWishes([...list, ...defaultWishes]);
+            return;
+          }
+        } catch (e) { console.error(e); }
+      }
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      renderWishes([...saved, ...defaultWishes]);
+    }
+
+    async function submitWish(e) {
+      e.preventDefault();
+      const btn = document.getElementById('wish-submit-btn');
+      const name = document.getElementById('wish-name').value.trim();
+      const msg = document.getElementById('wish-msg').value.trim();
+      if (!name || !msg) return;
+
+      btn.disabled = true;
+      btn.innerText = "Sending...";
+
+      const newWish = {
+        name,
+        msg,
+        time: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      };
+
+      // Save to Cloud if configured
+      if (CLOUD_DB_URL) {
+        try {
+          await fetch(`${CLOUD_DB_URL}/wishes.json`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newWish)
+          });
+        } catch (err) { console.error(err); }
+      }
+
+      // Always save locally as well
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+      saved.unshift(newWish);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+
+      await loadWishes();
+      e.target.reset();
+      btn.disabled = false;
+      btn.innerText = "Send Wish 🤍";
+    }
+
+    function toggleRsvpModal(show) {
+      document.getElementById('rsvp-modal').classList.toggle('hidden', !show);
+    }
+
+    async function submitRsvp(e) {
+      e.preventDefault();
+      const name = document.getElementById('rsvp-name').value.trim();
+      const status = document.getElementById('rsvp-attend').value;
+      const count = document.getElementById('rsvp-count').value;
+
+      if (CLOUD_DB_URL) {
+        try {
+          await fetch(`${CLOUD_DB_URL}/rsvp.json`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, status, count, date: new Date().toISOString() })
+          });
+        } catch (err) { console.error(err); }
+      }
+
+      alert(`Thank you, ${name}! Your RSVP (${status} - ${count} guest(s)) has been received. 🤍`);
+      toggleRsvpModal(false);
+      e.target.reset();
+    }
+
+    loadWishes();
+  </script>
+</body>
+</html>
