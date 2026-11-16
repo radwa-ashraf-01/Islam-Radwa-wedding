@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Islam & Radwa | Wedding Invitation</title>
-  <meta name="description" content="Islam & Radwa Joyfully Invite You | Monday, December 14, 2026 at Police El-Shorta Club (Lailaty Hall)" />
+  <meta name="description" content="Islam & Radwa Joyfully Invite You | Monday, December 14, 2026 at Police Union Club (Lailty Hall)" />
   <meta property="og:title" content="Islam & Radwa | Wedding Invitation" />
-  <meta property="og:description" content="Join us as we celebrate our wedding at Police El-Shorta Club (Lailaty Hall) | Monday, December 14, 2026" />
+  <meta property="og:description" content="Join us as we celebrate our wedding at Police Union Club (Lailty Hall) | Monday, December 14, 2026" />
   <meta property="og:image" content="image_ed21a4.jpg" />
 
   <!-- Google Fonts -->
@@ -82,6 +82,26 @@
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    @keyframes wish-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .wish-card { animation: wish-in 0.45s ease-out both; }
+
+    #wishes-container::-webkit-scrollbar { width: 6px; }
+    #wishes-container::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.55); border-radius: 999px; }
+    #wishes-container::-webkit-scrollbar-track { background: transparent; }
+
+    input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -264,13 +284,13 @@
         </div>
 
         <!-- Add to Google Calendar -->
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Islam+%26+Radwa&dates=20261214T160000Z/20261214T210000Z&details=Wedding+celebration+of+Islam+%26+Radwa+at+Police+El-Shorta+Club+(Lailaty+Hall).+Location:+https://maps.app.goo.gl/qq6V9NevhkTmANtf7&location=Police+El-Shorta+Club+Lailaty+Hall" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#5c0c14] text-[#f3e5ab] text-xs uppercase tracking-wider font-semibold border border-[#d4af37] shadow hover:bg-[#360509] transition">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Islam+%26+Radwa&dates=20261214T160000Z/20261214T210000Z&details=Wedding+celebration+of+Islam+%26+Radwa+at+Police+Union+Club+(Lailty+Hall).+Location:+https://maps.app.goo.gl/qq6V9NevhkTmANtf7&location=Police+Union+Club+Lailty+Hall" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#5c0c14] text-[#f3e5ab] text-xs uppercase tracking-wider font-semibold border border-[#d4af37] shadow hover:bg-[#360509] transition">
           <span>📅</span>
           <span>Add to Calendar</span>
         </a>
       </section>
 
-      <!-- 4. Wedding Reception & Location Section (Nady Ittihad El-Shorta & Lailaty Hall) -->
+      <!-- 4. Wedding Reception & Location Section (Police Union Club & Lailty Hall) -->
       <section class="reveal royal-gradient text-[#fdfbf7] px-6 py-12 text-center border-y-4 border-[#d4af37]">
         <p class="text-xs uppercase tracking-[0.25em] text-[#f3e5ab]/70 mb-1">The Celebration</p>
         <h2 class="font-title text-3xl text-[#f3e5ab] mb-2">Wedding Reception</h2>
@@ -289,13 +309,13 @@
           </div>
         </div>
 
-        <!-- Venue Details (Police Club - Lailaty Hall) & Google Maps Button -->
+        <!-- Venue Details (Police Union Club - Lailty Hall) & Google Maps Button -->
         <div class="bg-[#fdfbf7] text-[#5c0c14] p-6 rounded-2xl border-2 border-[#d4af37] shadow-xl">
           <div class="w-12 h-12 rounded-full bg-[#5c0c14]/10 text-[#5c0c14] flex items-center justify-center mx-auto mb-3 text-2xl">
             📍
           </div>
-          <h3 class="font-title text-2xl mb-1">Police El-Shorta Club</h3>
-          <p class="font-semibold text-base text-[#5c0c14] mb-2">Lailaty Hall (قاعة ليلتي)</p>
+          <h3 class="font-title text-2xl mb-1">Police Union Club</h3>
+          <p class="font-semibold text-base text-[#5c0c14] mb-2">Lailty Hall (قاعة ليلتي)</p>
           <p class="text-xs text-[#5c0c14]/75 mb-5">Tap the button below for exact Google Maps directions to the venue</p>
 
           <a href="https://maps.app.goo.gl/qq6V9NevhkTmANtf7?g_st=iw" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl royal-gradient text-[#f3e5ab] text-sm font-semibold border border-[#d4af37] shadow-lg hover:scale-[1.02] transition">
@@ -349,16 +369,38 @@
         <!-- Guestbook Box -->
         <div class="bg-white p-6 rounded-2xl gold-border shadow-md text-left">
           <h3 class="font-title text-2xl text-[#5c0c14] text-center mb-4">Guestbook Wishes 🤍</h3>
-          <form onsubmit="submitWish(event)" class="space-y-3 mb-6">
-            <input type="text" id="wish-name" required placeholder="Enter your name*" class="w-full px-4 py-2.5 rounded-xl bg-[#fdfbf7] border border-[#d4af37]/50 text-sm focus:outline-none focus:border-[#5c0c14]" />
-            <textarea id="wish-msg" required rows="3" placeholder="Write your wishes for Islam & Radwa...*" class="w-full px-4 py-2.5 rounded-xl bg-[#fdfbf7] border border-[#d4af37]/50 text-sm focus:outline-none focus:border-[#5c0c14]"></textarea>
+
+          <form onsubmit="submitWish(event)" class="space-y-3 mb-5">
+            <input type="text" id="wish-name" required maxlength="40" autocomplete="name" dir="auto" placeholder="Enter your name*" class="w-full px-4 py-2.5 rounded-xl bg-[#fdfbf7] border border-[#d4af37]/50 text-sm focus:outline-none focus:border-[#5c0c14]" />
+            <textarea id="wish-msg" required rows="3" maxlength="300" dir="auto" placeholder="Write your wishes for Islam & Radwa...*" class="w-full px-4 py-2.5 rounded-xl bg-[#fdfbf7] border border-[#d4af37]/50 text-sm focus:outline-none focus:border-[#5c0c14]"></textarea>
             <button type="submit" id="wish-submit-btn" class="w-full py-3 rounded-xl royal-gradient text-[#f3e5ab] text-sm font-semibold border border-[#d4af37] hover:opacity-95 transition">
               Send Wish 🤍
             </button>
+            <p id="wish-feedback" class="text-xs text-center min-h-[1rem]" role="status" aria-live="polite"></p>
           </form>
 
-          <!-- Live Wishes List -->
-          <div id="wishes-container" class="space-y-3 max-h-72 overflow-y-auto pr-1">
+          <!-- Pinned note from the couple -->
+          <div class="relative royal-gradient rounded-2xl p-5 mb-5 border border-[#d4af37] shadow-lg overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent"></div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2.5">
+                <span class="w-9 h-9 rounded-full bg-[#f3e5ab] text-[#5c0c14] flex items-center justify-center font-title text-base border border-[#d4af37] shadow">I&amp;R</span>
+                <span class="font-title text-lg text-[#f3e5ab] leading-none">Islam &amp; Radwa</span>
+              </div>
+              <span class="text-[10px] px-2.5 py-1 rounded-full bg-[#360509]/70 border border-[#d4af37]/60 text-[#f3e5ab]">📌 Pinned</span>
+            </div>
+            <p class="font-arabic text-lg text-[#f3e5ab] text-center leading-loose mb-1" dir="rtl">شكرًا لأنكم جزء من فرحتنا 🤍</p>
+            <p class="text-xs text-[#fdfbf7]/85 text-center leading-relaxed italic">
+              Every wish you leave here will be treasured forever. Thank you for being part of our story.
+            </p>
+          </div>
+
+          <!-- Live Wishes List (visible to every guest) -->
+          <div class="flex items-center justify-between mb-2 px-1">
+            <span class="text-xs font-semibold text-[#5c0c14]">💌 Wishes from our guests</span>
+            <span id="wishes-count" class="text-[11px] text-[#5c0c14]/60"></span>
+          </div>
+          <div id="wishes-container" class="space-y-3 max-h-80 overflow-y-auto pr-1" aria-live="polite">
             <!-- Wishes will be loaded here automatically -->
           </div>
         </div>
@@ -376,7 +418,7 @@
         <p class="text-sm leading-relaxed text-[#fdfbf7]/90 italic max-w-md mx-auto">
           With hearts full of love and gratitude, we invite you to join us as we begin our forever.<br/>
           Some destinies are written by Allah in the most beautiful ways, and today, we celebrate the beginning of ours. May our union be blessed with love, mercy, and a lifetime of happiness.<br/><br/>
-          We would be honored to have you witness and celebrate our special day at Police El-Shorta Club (Lailaty Hall). 🤍
+          We would be honored to have you witness and celebrate our special day at Police Union Club (Lailty Hall). 🤍
         </p>
       </section>
 
@@ -424,9 +466,15 @@
        SCRIPTS (COUNTDOWN, ANIMATIONS & LIVE GUESTBOOK)
        ========================================================= -->
   <script>
-    // لو حابب تربطها بقاعدة بيانات سحابية (Firebase Realtime Database) عشان تظهرلك أنت كصاحب دعوة ولكل الناس لحظياً:
-    // أنشئ مشروع مجاني على Firebase وحط رابط الـ URL الخاص بقاعدة البيانات هنا بين العلامتين:
-    const CLOUD_DB_URL = ""; 
+    // ============================================================
+    // 🔥 عشان الـ Wishes تظهر لكل الناس (مش بس على جهاز اللي كتبها):
+    // 1) اعمل مشروع مجاني على https://console.firebase.google.com
+    // 2) Build > Realtime Database > Create Database (Start in test mode)
+    // 3) انسخ الرابط اللي بيظهر فوق (شكله: https://xxxx-default-rtdb.firebaseio.com)
+    //    وحطه بين العلامتين تحت. من غير الرابط دا الـ wishes بتتحفظ على جهاز الشخص نفسه بس.
+    // 4) من تاب Rules حط القواعد الموجودة في الشرح اللي بعتهولك.
+    // ============================================================
+    const CLOUD_DB_URL = "https://wedding-66e6d-default-rtdb.firebaseio.com";
 
     // 1. Falling Hearts in Envelope Screen
     const particlesContainer = document.getElementById('falling-particles');
@@ -492,83 +540,138 @@
       document.getElementById('lightbox').classList.remove('hidden');
     }
 
-    // 6. RSVP Modal & Guestbook Storage (LocalStorage + Optional Cloud Sync)
-    const STORAGE_KEY = 'islam_radwa_wishes_v2';
-    const defaultWishes = [
-      { name: "Family & Friends", msg: "Wishing Islam & Radwa a lifetime of love, joy, and endless blessings at Police Club! 🤍", time: "Pinned" }
-    ];
-
-    function renderWishes(wishesArray) {
-      const container = document.getElementById('wishes-container');
-      container.innerHTML = '';
-      wishesArray.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'p-3.5 rounded-xl bg-[#fdfbf7] border border-[#d4af37]/30 shadow-sm';
-        div.innerHTML = `
-          <div class="flex justify-between items-center mb-1">
-            <span class="font-bold text-xs text-[#5c0c14]">${escapeHtml(item.name)}</span>
-            <span class="text-[10px] text-[#5c0c14]/50">${escapeHtml(item.time || 'Just now')}</span>
-          </div>
-          <p class="text-xs text-[#5c0c14]/85 leading-relaxed">${escapeHtml(item.msg)}</p>
-        `;
-        container.appendChild(div);
-      });
-    }
+    // 6. RSVP Modal & Guestbook (shared via Firebase, local fallback)
+    const DB_URL = (CLOUD_DB_URL || '').trim().replace(/\/+$/, '');
+    const STORAGE_KEY = 'islam_radwa_wishes_v3';
+    const COOLDOWN_KEY = 'islam_radwa_last_wish';
+    const MAX_SHOWN = 100;
+    let currentWishes = [];
 
     function escapeHtml(str) {
       return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
     }
 
-    async function loadWishes() {
-      if (CLOUD_DB_URL) {
-        try {
-          const res = await fetch(`${CLOUD_DB_URL}/wishes.json`);
-          const data = await res.json();
-          if (data) {
-            const list = Object.values(data).reverse();
-            renderWishes([...list, ...defaultWishes]);
-            return;
-          }
-        } catch (e) { console.error(e); }
+    function formatTime(item) {
+      if (!item.ts) return item.time || '';
+      const s = (Date.now() - item.ts) / 1000;
+      if (s < 60) return 'Just now';
+      if (s < 3600) return Math.floor(s / 60) + 'm ago';
+      if (s < 86400) return Math.floor(s / 3600) + 'h ago';
+      return new Date(item.ts).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    }
+
+    function renderWishes(list) {
+      currentWishes = list;
+      const container = document.getElementById('wishes-container');
+      const countEl = document.getElementById('wishes-count');
+      const shown = list.slice(0, MAX_SHOWN);
+
+      countEl.textContent = list.length ? list.length + (list.length === 1 ? ' wish' : ' wishes') : '';
+
+      if (!shown.length) {
+        container.innerHTML = `
+          <div class="text-center py-6 px-4 rounded-xl border border-dashed border-[#d4af37]/60 bg-[#fdfbf7]">
+            <div class="text-2xl mb-1">🤍</div>
+            <p class="text-xs text-[#5c0c14]/70">No wishes yet. Be the first to write one for Islam &amp; Radwa.</p>
+          </div>`;
+        return;
       }
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      renderWishes([...saved, ...defaultWishes]);
+
+      container.innerHTML = shown.map((item, i) => {
+        const initial = escapeHtml(([...String(item.name).trim()][0] || '🤍').toUpperCase());
+        return `
+          <div class="wish-card flex gap-3 p-3.5 rounded-xl bg-[#fdfbf7] border border-[#d4af37]/40 shadow-sm" style="animation-delay:${Math.min(i, 8) * 40}ms">
+            <div class="shrink-0 w-9 h-9 rounded-full royal-gradient text-[#f3e5ab] border border-[#d4af37] flex items-center justify-center font-title text-sm">${initial}</div>
+            <div class="min-w-0 flex-1">
+              <div class="flex justify-between items-baseline gap-2 mb-0.5">
+                <span dir="auto" class="font-bold text-sm text-[#5c0c14] truncate">${escapeHtml(item.name)}</span>
+                <span class="text-[10px] text-[#5c0c14]/50 whitespace-nowrap">${escapeHtml(formatTime(item))}</span>
+              </div>
+              <p dir="auto" class="text-[13px] text-[#5c0c14]/85 leading-relaxed break-words whitespace-pre-line">${escapeHtml(item.msg)}</p>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    function getLocalWishes() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+      catch (e) { return []; }
+    }
+
+    async function loadWishes() {
+      if (DB_URL) {
+        try {
+          const res = await fetch(`${DB_URL}/wishes.json`, { cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          const list = data ? Object.values(data).filter(w => w && w.name && w.msg) : [];
+          list.sort((a, b) => (b.ts || 0) - (a.ts || 0));
+          renderWishes(list);
+          return;
+        } catch (e) {
+          console.error('Could not load wishes from the cloud:', e);
+        }
+      }
+      renderWishes(getLocalWishes());
+    }
+
+    function setFeedback(text, ok) {
+      const el = document.getElementById('wish-feedback');
+      el.textContent = text;
+      el.className = 'text-xs text-center min-h-[1rem] ' + (ok ? 'text-[#5c0c14]' : 'text-red-700');
+      if (text) setTimeout(() => { if (el.textContent === text) el.textContent = ''; }, 4000);
     }
 
     async function submitWish(e) {
       e.preventDefault();
+      const form = e.target;
       const btn = document.getElementById('wish-submit-btn');
       const name = document.getElementById('wish-name').value.trim();
       const msg = document.getElementById('wish-msg').value.trim();
       if (!name || !msg) return;
 
+      const last = Number(localStorage.getItem(COOLDOWN_KEY) || 0);
+      if (Date.now() - last < 15000) {
+        setFeedback('Please wait a few seconds before sending another wish.', false);
+        return;
+      }
+
       btn.disabled = true;
-      btn.innerText = "Sending...";
+      btn.textContent = 'Sending...';
 
-      const newWish = {
-        name,
-        msg,
-        time: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-      };
+      const newWish = { name: name.slice(0, 40), msg: msg.slice(0, 300), ts: Date.now() };
+      let sent = true;
 
-      if (CLOUD_DB_URL) {
+      if (DB_URL) {
         try {
-          await fetch(`${CLOUD_DB_URL}/wishes.json`, {
+          const res = await fetch(`${DB_URL}/wishes.json`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newWish)
           });
-        } catch (err) { console.error(err); }
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+        } catch (err) {
+          console.error('Could not send wish:', err);
+          sent = false;
+        }
+      } else {
+        const saved = getLocalWishes();
+        saved.unshift(newWish);
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch (err) {}
       }
 
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-      saved.unshift(newWish);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+      if (sent) {
+        localStorage.setItem(COOLDOWN_KEY, String(Date.now()));
+        form.reset();
+        renderWishes([newWish, ...currentWishes]);
+        setFeedback('Thank you! Your wish is now in the guestbook 🤍', true);
+        if (DB_URL) setTimeout(loadWishes, 1200);
+      } else {
+        setFeedback('Could not send your wish. Please check your connection and try again.', false);
+      }
 
-      await loadWishes();
-      e.target.reset();
       btn.disabled = false;
-      btn.innerText = "Send Wish 🤍";
+      btn.textContent = 'Send Wish 🤍';
     }
 
     function toggleRsvpModal(show) {
@@ -577,26 +680,49 @@
 
     async function submitRsvp(e) {
       e.preventDefault();
+      const form = e.target;
+      const btn = document.getElementById('rsvp-submit-btn');
       const name = document.getElementById('rsvp-name').value.trim();
       const status = document.getElementById('rsvp-attend').value;
-      const count = document.getElementById('rsvp-count').value;
+      const count = status === 'Attending' ? document.getElementById('rsvp-count').value : '0';
 
-      if (CLOUD_DB_URL) {
+      btn.disabled = true;
+      if (DB_URL) {
         try {
-          await fetch(`${CLOUD_DB_URL}/rsvp.json`, {
+          const res = await fetch(`${DB_URL}/rsvp.json`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, status, count, date: new Date().toISOString() })
           });
-        } catch (err) { console.error(err); }
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+        } catch (err) {
+          console.error(err);
+          alert('Sorry, we could not save your RSVP. Please try again.');
+          btn.disabled = false;
+          return;
+        }
       }
 
-      alert(`Thank you, ${name}! Your RSVP (${status} - ${count} guest(s)) has been received. 🤍`);
+      const detail = status === 'Attending' ? `${count} guest(s)` : 'not attending';
+      alert(`Thank you, ${name}! Your RSVP (${status} - ${detail}) has been received. 🤍`);
       toggleRsvpModal(false);
-      e.target.reset();
+      form.reset();
+      btn.disabled = false;
     }
 
+    // Close popups with the Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleRsvpModal(false);
+        document.getElementById('lightbox').classList.add('hidden');
+      }
+    });
+
+    // Load wishes now, and refresh every 20s so guests see new wishes without reloading
     loadWishes();
+    if (DB_URL) {
+      setInterval(() => { if (!document.hidden) loadWishes(); }, 20000);
+    }
   </script>
 </body>
 </html>
